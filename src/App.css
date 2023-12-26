@@ -1,38 +1,96 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+  --cyan: hsl(193, 38%, 86%);
+  --green: hsl(150, 100%, 66%);
+
+  --gray-blue: hsl(217, 19%, 38%);
+  --dark-gray-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+
+  font-family: 'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--dark-blue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  width: 600px;
+  height: 350px;
+  background-color: var(--dark-gray-blue);
+  border-radius: 0.5em;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 3em 3em 4.5em 3em;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.advice_id {
+  color: var(--green);
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+.advice_text {
+  color: var(--cyan);
+  font-size: 28px;
+  margin-top: 1em;
+}
+
+.divider {
+  content: url('./pattern-divider-desktop.svg');
+  margin: 0;
+  margin-top: auto;
+}
+
+.dice-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: var(--green);
+  padding: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.dice-container:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 30px 5px hsl(150, 100%, 66%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:600px) {
+
+  body {
+    padding: 1em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .divider {
+    content: url('./pattern-divider-mobile.svg');
   }
+  
+  main {
+    width: 100%;
+    padding: 2.5em 1.5em 4em 1.5em;
+  }
+
+  .advice_id {
+    font-size: 12px;
+  }
+
 }
